@@ -1,0 +1,58 @@
+<!--
+   Authors : pvgroups
+  Website : https://pvgroups.com/
+  App Name : Ellvin Fresh
+  Created : 1-jan-2021
+  This App Template Source code is licensed as per the
+  terms found in the Website https://pvgroups.com/license
+  Copyright and Good Faith Purchasers © 2020-present pvgroups.
+ -->
+<div class="container">
+    <div mdbModal #addressModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true" style="z-index: 9999;">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="addressModal.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+                    <h4 class="modal-title w-100" id="myModalLabel">
+                        <span *ngIf="newAddress === true"> {{util.getString('Create Address')}} </span>
+                        <span *ngIf="newAddress === false"> {{util.getString('Update Address')}} </span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="md-form">
+                        <input id="text" [(ngModel)]="address" class="form-control" type="text" mdbInput>
+                        <label for="text"> {{util.getString('LOCATIONS')}} </label>
+                    </div>
+                    <div class="md-form">
+                        <input id="house" [(ngModel)]="house" class="form-control" type="text" mdbInput>
+                        <label for="house"> {{util.getString('HOUSE / FLAT NO')}} </label>
+                    </div>
+                    <div class="md-form">
+                        <input id="landmark" [(ngModel)]="landmark" class="form-control" type="text" mdbInput>
+                        <label for="landmark"> {{util.getString('LANDMARK')}} </label>
+                    </div>
+                    <div class="md-form">
+                        <input id="pincode" [(ngModel)]="pincode" class="form-control" type="text" mdbInput>
+                        <label for="pincode"> {{util.getString('Pincode')}} </label>
+                    </div>
+                    <div class="md-form">
+                        <select class="browser-default custom-select" [(ngModel)]="title">
+            <option value="home"> {{util.getString('HOME')}} </option>
+            <option value="work"> {{util.getString('WORK')}} </option>
+            <option value="other"> {{util.getString('OTHER')}} </option>
+          </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="addressModal.hide()" mdbWavesEffect> {{util.getString('Close')}} </button>
+                    <button type="button" (click)="actionAddress()" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>
+          <span *ngIf="newAddress === true"> {{util.getString('Save')}} </span>
+          <span *ngIf="newAddress === false"> {{util.getString('Update')}} </span>
+        </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

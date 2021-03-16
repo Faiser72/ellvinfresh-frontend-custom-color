@@ -1,0 +1,166 @@
+/*
+   Authors : pvgroups
+  Website : https://pvgroups.com/
+  App Name : Ellvin Fresh
+  Created : 1-jan-2021
+  This App Template Source code is licensed as per the
+  terms found in the Website https://pvgroups.com/license
+  Copyright and Good Faith Purchasers © 2020-present pvgroups.
+*/
+
+.footer_lbl {
+    border-bottom: 2px solid #DE4828;
+    padding-bottom: 5px;
+    width: max-content;
+}
+
+.detail_content {
+    line-height: 26px;
+    text-align: left;
+    font-weight: 400;
+}
+
+.flex_box {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    mdb-icon {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+    a {
+        font-weight: 500;
+    }
+    a:hover {
+        color: #DE4828;
+    }
+    label {
+        margin-bottom: 0;
+        font-weight: 500;
+    }
+}
+
+.flex_box:hover {
+    color: #DE4828;
+    a {
+        color: #DE4828 !important;
+    }
+}
+
+.social_div {
+    mdb-icon {
+        font-size: 22px;
+    }
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 14px;
+    color: #4a4a4a;
+    line-height: 2.9;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.container,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
+    max-width: 1140px;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.popular-searches ul {
+    display: block;
+    padding-bottom: 10px;
+    margin-top: 6px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.popular-searches ul li.heading {
+    display: block;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: #4a4a4a;
+    line-height: 2.5;
+    border-right: none;
+    font-weight: 600;
+}
+
+.popular-searches ul li {
+    color: #4a4a4a;
+    font-size: 14px;
+    line-height: 1.72;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 15px;
+    margin-right: 15px;
+    display: inline-block;
+    border-right: 1px solid #c2c2c2;
+}
+
+.popular-searches ul :last-of-type {
+    margin-right: 0;
+    padding-right: 5px;
+    border-bottom: none;
+    color: grey;
+}
+
+.heading a {
+    text-decoration: none;
+    color: #e53513 !important;
+}
+
+.footer ul li a {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.fb-ic {
+    color: white;
+    &:hover {
+        color: #204eb1;
+    }
+}
+
+.tw-ic {
+    color: white;
+    &:hover {
+        color: #00a2f3;
+    }
+}
+
+.gplus-ic {
+    color: white;
+    &:hover {
+        color: #c9522e;
+    }
+}
+
+.li-ic {
+    color: white;
+    &:hover {
+        color: #0077b5;
+    }
+}
+
+.ins-ic {
+    color: white;
+    &:hover {
+        color: #b430b0;
+    }
+}

@@ -1,0 +1,282 @@
+<!--
+   Authors : pvgroups
+  Website : https://pvgroups.com/
+  App Name : Ellvin Fresh
+  Created : 1-jan-2021
+  This App Template Source code is licensed as per the
+  terms found in the Website https://pvgroups.com/license
+  Copyright and Good Faith Purchasers © 2020-present pvgroups.
+ -->
+<div class="navbar-top pt-2 pb-2" style="background: #171b20;">
+    <div class="containerhar" style="background: #171b20;    font-size: 14px;
+  font-family: 'Maven Pro', sans-serif;
+  line-height: 28px;">
+        <div class="row">
+            <div class="col-md-6" style="padding-left: 150px;">
+                <a href="#" class="mb-0 text-white">
+             20% cashback for all users | Code: <strong><span class="text-light">{{this.coupon}}<i class="fas fa-tags"></i> </span> </strong>  </a>
+            </div>
+            <div class="col-md-6 text-right row">
+                <div class="col-md-6">
+                    <a href="#" class="text-white"><i class="fa fa-map-marker" aria-hidden="true"></i>
+{{addressdata}}				  </a>
+                    <!-- Vijayawada, Andhra Pradesh -->
+                </div>
+                <div [ngbPopover]="popContent3" triggers="manual" style="background: #171b20; color: white; cursor: pointer; padding-left: 100px;" #p3="ngbPopover" (click)="p3.open()">
+                    {{getLangName()}}
+                    <span class="fa fa-chevron-down" aria-hidden="true"></span>
+                </div>
+                <!--<div class="col-md-6">
+          <a href="#" data-target="#bd-example-modal" id="login1" data-toggle="modal" class="text-white ml-3 mr-3"><i class="mdi mdi-lock"></i> Sign In</a>
+  <a  href="#register" data-toggle="tab" class="text-white"><i class="mdi mdi-account-circle"></i> Sign Up</a>
+  
+  </div>-->
+            </div>
+        </div>
+    </div>
+</div>
+<div mdbModal #cityModal="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{ignoreBackdropClick: true}" style="z-index: 9999;  ">
+    <div class="modal-dialog modal-notify modal-success" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <p class="heading lead" style="text-align: center;">{{util.getString('Select city')}} </p>
+            </div>
+            <div class="modal-body">
+                <div *ngFor="let item of cities" (click)="selectedCity(item)">
+                    <p> {{item.name}} </p>
+                </div>
+            </div>
+
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+
+
+<div mdbModal #frame="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="z-index: 9999;" [config]="{backdrop: true, ignoreBackdropClick: true}">
+    <div class="modal-dialog modal-notify modal-success" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="heading lead" style="text-align: center;"> {{util.getString('Verify')}} </p>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col-lg-12 logo_banner" (click)='routeToHome()'>
+                    <img src="assets/logo.png" style="margin-left: -30px; width: 120px;">
+                </div>
+                <div class="row d-flex justify-content-center align-items-center">
+                </div>
+                <div>
+
+                    <div class="contents login_form">
+                        <h2 class="headerText">{{util.getString('Verification')}} </h2>
+                        <p class="subTitleText">{{util.getString('We texted you a code to verify')}}
+                            <br> {{util.getString('your phone')}} {{umobile}}
+                        </p>
+                        <div class="otpInputs">
+                            <ng-otp-input (onInputChange)="onOtpChange($event)" [config]="{length:6,inputStyles:{'width': '30px','height': '30px'}}">
+                            </ng-otp-input>
+                        </div>
+
+                        <button type="button" class="btn btn-link" (click)="resend()"> {{util.getString('Resend code')}} </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer justify-content-center">
+                <a type="button" mdbBtn color="primary" class="waves-light" mdbWavesEffect (click)="continue()">{{util.getString('Submit')}}
+        </a>
+            </div>
+
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+
+<div mdbModal #loginModal="mdbModal" class="modal right fade" id="" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-notify modal-success" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="col-lg-12 logo_banner" (click)='routeToHome()'>
+                    <img src="assets/logo.png" height="40" style="margin-left: -30px;  height: 65px; width: 180px;">
+                </div>
+                <div class="row d-flex justify-content-center align-items-center">
+
+                    <div class="row form_row" style="margin-top: 0px">
+                        <div class="col-lg-12 login_form">
+
+                            <div class="form_div">
+
+                                <div class="head_title">
+                                    <label> {{util.getString('Login')}} </label>
+                                </div>
+
+                                <!-- <input type="email" [placeholder]="util.getString('Email')" [(ngModel)]="email" class="form-control">
+                <input type="password" [placeholder]="util.getString('Password')" [(ngModel)]="password" class="form-control"> -->
+                                <input type="number" [placeholder]="util.getString('Mobile')" [(ngModel)]="mobile" class="form-control" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                <label class="forgot" (click)="reset()"> {{util.getString('Forgot Password ?')}} </label>
+                                <button type="button" class="btn" (click)="userLogin()"> {{util.getString('Login')}} </button>
+
+                                <hr>
+
+                                <label class="bottom_lbl" (click)="goToRegister()"> {{util.getString('Create New Account')}} </label>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+
+
+
+<!--<div class="navbar-top pt-2 pb-2">
+  <div class="container">
+     <div class="row">
+        <div class="col-md-6">
+           <a href="#" class="mb-0 text-white">
+              20% cashback for all users | Code: <strong><span class="text-light">ELLVIN2020 <span class="mdi mdi-tag-faces"></span></span> </strong>  </a>
+        </div>
+        <div class="col-md-6 text-right row">
+  <div class="col-md-6">
+           <a href="#" class="text-white"><i aria-hidden="true" class="mdi mdi-map-marker-circle"></i>
+ Bangalore,Karnataka				  </a>
+   </div>
+             <div class="col-md-6">
+           <a href="#" data-target="#bd-example-modal" id="login1" data-toggle="modal" class="text-white ml-3 mr-3"><i class="mdi mdi-lock"></i> Sign In</a>
+   <a  href="#register" data-toggle="tab" class="text-white"><i class="mdi mdi-account-circle"></i> Sign Up</a>
+   
+   </div>
+                  </div>
+     </div>
+  </div>
+</div>-->
+
+<header class="page-header font-small  " style="margin-bottom: 100px;">
+    <div class="toolbar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-1" (click)='routeToHome()'>
+                    <a (click)='routeToHome()'>
+                        <img src="assets/logo.png" height="40" style="margin-left: -30px;  height: 65px; width: 180px; cursor: pointer;">
+                    </a>
+                </div>
+                <div class="col-lg-2" style="cursor: pointer;" (click)='routeToHome()'>
+                    <ng-template #popContent let-greeting="greeting">
+                        <div *ngFor="let item of dummy">
+                            <ngx-skeleton-loader animation="progress" [theme]="{ 'border-radius': '5px', height: '20px',width:'200px', border: '1px solid white' }">
+                            </ngx-skeleton-loader>
+                        </div>
+                        <div *ngFor="let item of cityArray" [ngClass]="id === item.id ? 'activeCity':'normalCity'" (click)="selected(item)" style="cursor: pointer;">
+                            <span>{{item.name}}</span>
+                            <!--<mdb-icon fas icon="check-circle" *ngIf="id === item.id"style="cursor: pointer;"> {{item.name}}</mdb-icon> -->
+                        </div>
+                    </ng-template>
+                    <button type="button" class="btn btn-clear mr-2 cleanBtn" [ngbPopover]="popContent" triggers="manual" #p1="ngbPopover" (click)="p1.open()" style="background: white;margin-left: 71px;">
+                        <span aria-hidden="true" *ngIf="cityName"style="color: black; margin-left: 2px; ">{{cityName}}</span>
+                        <span aria-hidden="true" *ngIf="!cityName"style="color: black; margin-left: 2px; ">Not Available</span>
+                        <span class="fa fa-chevron-down" aria-hidden="true" *ngIf="cityName"></span>
+                    </button>
+                </div>
+
+                <div class="col-lg-4" style="display: flex;flex-direction: row; padding-left: 50px;">
+                    <input class="form-control" type="text" (keydown)="search($event.target.value)" [(ngModel)]="terms" [ngModelOptions]="{standalone: true}" [placeholder]="util.getString('Search for products')" aria-label="Search" class="searchText" (input)="inputChange()">
+                    <mdb-icon (click)="search(terms)" fas icon="search" style="padding: 10px;background: #f3f3f3;cursor: pointer;"></mdb-icon>
+                </div>
+
+                <div class="col-lg-2">
+                    <ng-template #popContent2 let-greeting="greeting">
+                        <br>
+                        <a mdbWavesEffect class="linkBtn" *ngIf="getAccount() === false" (click)="login()">
+              {{util.getString('Login or Sign up')}} </a>
+                        <a mdbWavesEffect class="linkBtn" *ngIf="getAccount() === true" (click)="myaccount()">
+              {{util.getString('My Account')}} </a>
+                        <hr>
+                        <div class="flex_box" (click)="goChat()" *ngIf="getAccount() === true">
+                            <mdb-icon fas icon="comments"></mdb-icon> <a class="dark-grey-text">{{util.getString('Support')}} </a>
+                        </div>
+                        <!-- <hr *ngIf="getAccount() === true">
+            <div class="flex_box" (click)="faq()">
+              <mdb-icon fas icon="question-circle"></mdb-icon> <a class="dark-grey-text">{{util.getString('FAQs')}} </a>
+            </div> -->
+                        <hr *ngIf="getAccount() === true">
+                        <div class="flex_box" *ngIf="getAccount() === true" (click)="myOrders()">
+                            <mdb-icon fas icon="shopping-
+              
+              t"></mdb-icon> <a class="dark-grey-text">{{util.getString('Orders')}} </a>
+                        </div>
+                        <!-- <hr> -->
+                        <!-- <div class="flex_box" (click)="help()">
+              <mdb-icon fas icon="info-circle"></mdb-icon> <a class="dark-grey-text">{{util.getString('Help')}} </a>
+            </div> -->
+                        <hr *ngIf="getAccount() === true">
+                        <div class="flex_box" *ngIf="getAccount() === true" (click)="logout()">
+                            <mdb-icon fas icon="power-off"></mdb-icon> <a class="dark-grey-text">{{util.getString('Logout')}} </a>
+                        </div>
+                    </ng-template>
+                    <button type="button" class="btn btn-clear mr-2 cleanBtn" [ngbPopover]="popContent2" triggers="manual" #p2="ngbPopover" (click)="p2.open()">
+                      {{getAccount() === true ?  fname+" "+lname: util.getString('My Account')}}  
+                      <span class="fa fa-chevron-down" aria-hidden="true"></span>
+                    </button>
+                </div>
+
+                <div class="col-lg-1">
+                    <ng-template #popContent3 let-greeting="greeting">
+                        <div *ngFor="let item of dummyLang">
+                            <ngx-skeleton-loader animation="progress" [theme]="{ 'border-radius': '5px', height: '20px',width:'100px', border: '1px solid white' }">
+                            </ngx-skeleton-loader>
+                        </div>
+                        <div *ngFor="let item of langs" [ngClass]="lngId === item.file ? 'activeCity':'normalCity'" (click)="changed(item.file)" style="cursor: pointer;">
+                            <img [src]="api.mediaURL+item.cover" style="height: 15px;width: 15px;margin-right: 5px;" alt=""> {{item.name}}
+                        </div>
+                    </ng-template>
+                </div>
+                <div class="col-lg-2">
+                    <li class="list-inline-item cart-btn" id="cartlist">
+                        <a (click)="util.publishCartBtn()" data-toggle="offcanvas">
+                            <a class="mdi mdi-cart "><img style="height: 20px;margin-left: 5px;" src="assets/imgs/shopping-cart.png" /></a><a class="dummy1" style="color: white;">My Cart</a><small class="cart-value"> <a style="margin-left: 5px;">{{cart.cart.length}}</a></small></a>
+                    </li>
+                </div>
+
+
+                <!-- <div class="col-lg-1 flexer">
+          <a class="cartBtns" (click)="util.publishCartBtn()">
+            <i class="fas fa-shopping-cart">My Cart</i>
+            <small class="cart-value" *ngIf="cart.cart?.length"> {{cart.cart.length}} </small>
+            <span class="fa fa-shopping-bag" aria-hidden="true"></span>
+          </a>
+
+        </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="stack-top" *ngIf="products?.length && terms !==''">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-6">
+                    <div class="searchItem">
+                        <p *ngFor="let item of products" (click)="openProduct(item)">
+                            <img class="imgs" [src]="api.mediaURL+item.cover" alt="" onError="this.src='assets/imgs/user.png'"> {{item.name}}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-1"></div>
+            </div>
+
+        </div>
+    </div>
+</header>

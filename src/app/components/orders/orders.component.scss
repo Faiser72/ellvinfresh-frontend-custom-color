@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+/*
+   Authors : pvgroups
+  Website : https://pvgroups.com/
+  App Name : Ellvin Fresh
+  Created : 1-jan-2021
+  This App Template Source code is licensed as per the
+  terms found in the Website https://pvgroups.com/license
+  Copyright and Good Faith Purchasers © 2020-present pvgroups.
+*/
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidemenu {
+    .my_col {
+        padding: 0px 10px;
+        display: flex;
+        align-items: center;
+        // border-bottom: 1px solid lightgray;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        .icn_div {
+            height: 25px;
+            width: 25px;
+            min-width: 25px;
+            border-radius: 5px;
+            border: 1px solid lightgray;
+            position: relative;
+            margin-right: 10px;
+            mdb-icon {
+                font-size: 13px;
+                color: #DE4828;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        .right_div {
+            text-align: left;
+        }
+        .title_lbl {
+            font-weight: 500;
+            font-size: 15px;
+            margin: 0;
+            cursor: pointer;
+        }
+        .small_lbl {
+            color: gray;
+            margin: 0;
+            font-size: 14px;
+        }
+    }
+}
+
+label {
+    display: block;
+}
+
+.head_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
+    label {
+        font-weight: 500;
+        font-size: 26px;
+        text-transform: capitalize;
+    }
+    .flex_div {
+        display: flex;
+        align-items: center;
+        button {
+            background: #DE4828;
+            color: white;
+            font-weight: 500;
+            margin-left: 5px;
+            border-radius: 3px;
+            height: 38px;
+            width: 100px;
+        }
+    }
+}
+
+.filter {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px;
+    select {
+        border-radius: 3px;
+        border-color: lightgray;
+        padding: 5px 0px;
+        width: 200px;
+    }
+}
+
+.dummyCard {
+    border: 1px solid lightgray;
+    margin: 10px 0px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+    p {
+        margin: 0px;
+    }
+}
+
+.card_div {
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+    position: relative;
+    margin-bottom: 16px;
+    .image_div {
+        width: 250px;
+        min-width: 250px;
+        img {
+            margin-top: 10px;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    .status {
+        position: absolute;
+        right: 0;
+        bottom: 0px;
+        padding: 5px;
+        background: var(--ion-color-primary);
+        ;
+        border-bottom-right-radius: 5px;
+        color: white;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .desc_div {
+        width: 100%;
+        margin-left: 10px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        .border_bottom {
+            padding-bottom: 10px;
+            width: 100%;
+            .items {
+                margin: 0px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                font-size: 12px;
+                font-weight: 500;
+                padding-bottom: 5px;
+                border-bottom: .5px dashed lightgray;
+                margin-bottom: 5px;
+                text-transform: capitalize;
+            }
+            .itemss {
+                text-transform: capitalize;
+                margin: 0px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                font-size: 12px;
+                font-weight: 500;
+                margin-bottom: 5px;
+            }
+        }
+        .datetime {
+            text-transform: capitalize;
+            font-size: 12px;
+            font-weight: 500;
+        }
+    }
+}
+
+.inr-symbol {
+    font-family: 'Maven Pro';
+}

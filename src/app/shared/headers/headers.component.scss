@@ -1,0 +1,435 @@
+/*
+   Authors : pvgroups
+  Website : https://pvgroups.com/
+  App Name : Ellvin Fresh
+  Created : 1-jan-2021
+  This App Template Source code is licensed as per the
+  terms found in the Website https://pvgroups.com/license
+  Copyright and Good Faith Purchasers © 2020-present pvgroups.
+*/
+
+//added
+.toolbar {
+    // background-color: #DE4828 !important;
+    // background: linear-gradient(135deg, #e43312 0%, #b1007a 100%);
+    background: linear-gradient(115deg, #010d06 0%, #fffdd0be 100%);
+    // background-image: linear-gradient(to right, #010d06 0%, #fffdd0be 100%);
+    // background-color: #13281D;
+
+    // position: fixed;
+    //top: 0px;
+    width: 100%;
+    max-width: 100%;
+    z-index: 9999;
+    padding: 5px;
+    height: 100px;
+    //margin-top: 30px;
+    .activeCity {
+        background: #DE4828;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .normalCity {
+        background: white;
+        color: #DE4828;
+        padding: 10px;
+    }
+    .inputBx {
+        display: flex;
+        flex-direction: row;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        .searchBx {
+            padding: 10px;
+            background: #f3f3f3;
+            cursor: pointer;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+    .cleanBtn {
+        box-shadow: none;
+        //line-height: 0px;
+        //color: white;
+        font-weight: 600;
+        width: max-content;
+        min-width: max-content;
+        background: linear-gradient(135deg, #f48a0f 0%, #e32b13 100%);
+        color: white;
+        // background-color: white;
+        margin-block: 20px;
+    }
+    .cleanBtn2 {
+        box-shadow: none;
+        line-height: 0px;
+        color: white;
+        width: max-content;
+        min-width: max-content;
+    }
+    .linkBtn {
+        background-color: #DE4828 !important;
+        padding: 10px;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        white-space: nowrap;
+        width: 100%;
+        min-width: 100%;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .searchText {
+        width: 100%;
+        border: 0px;
+        padding: 6px;
+        height: 46px;
+    }
+    // border-radius: 5px;
+}
+
+.flex_box {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    color: gray;
+    mdb-icon {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+    a {
+        font-weight: 500;
+        color: white;
+    }
+    a:hover {
+        color: #DE4828;
+        color: white;
+        font-size: 20px;
+    }
+    label {
+        margin-bottom: 0;
+        font-weight: 500;
+    }
+}
+
+.flexBoxe {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cleanSmall {
+    box-shadow: none;
+    line-height: 0px;
+    color: white;
+}
+
+.flexer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    .cartBtns {
+        position: relative;
+        padding: 10px;
+        .carts {
+            position: absolute;
+            background: #f27474;
+            height: 20px;
+            width: 20px;
+            font-size: 15px;
+            border-radius: 50%;
+            line-height: 20px;
+            text-align: center;
+            right: 0px;
+            font-weight: bold;
+        }
+    }
+}
+
+.stack-top {
+    z-index: 9999;
+    position: absolute;
+    width: 100%;
+    .searchItem {
+        background: white;
+        box-shadow: 0px 0px 12px 0px grey;
+        color: black;
+        margin-top: -30px;
+        margin-left: 35px;
+        /* padding-right: 400px; */
+        width: 280px;
+        p {
+            padding: 10px;
+            margin: 0px;
+            border-bottom: 1px solid lightgray;
+            color: gray;
+            cursor: pointer;
+        }
+        .imgs {
+            height: 20px;
+            width: 20px;
+            margin-right: 10px;
+        }
+    }
+}
+
+//add
+.cart-btn .mdi {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 50px;
+    box-shadow: 0 2px 8px 0 rgba(255, 97, 98, 0.46);
+    color: #000;
+    display: inline-block;
+    font-size: 18px;
+    height: 36px;
+    line-height: 35px;
+    margin-right: 13px;
+    vertical-align: -3px;
+    width: 36px;
+    //background: #F8E6AE url("/shopping-cart.png") no-repeat 0px 0px;
+}
+
+.cart-btn .cart-value {
+    background: #ff253a;
+    background: -moz-linear-gradient(-45deg, #ff253a 0%, #ff8453 100%);
+    background: -webkit-linear-gradient(-45deg, #ff253a 0%, #ff8453 100%);
+    background: linear-gradient(135deg, #ff253a 0%, #ff8453 100%);
+    // filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ff253a', endColorstr='#ff8453', GradientType=1);
+    border-radius: 50px;
+    font-size: 16px;
+    font-style: bold;
+    font-weight: 600;
+    color: white;
+    height: 18px;
+    left: 39px;
+    line-height: 17px;
+    min-width: 18px;
+    position: absolute;
+    top: 11px;
+    margin-right: 12px
+}
+
+.dummy1 {
+    font-size: 15px;
+    font-style: bold;
+    font-weight: 500;
+    color: white;
+    height: 18px;
+    left: 31px;
+    line-height: 17px;
+    min-width: 18px;
+    position: absolute;
+    top: 11px;
+    margin-left: 30px
+}
+
+.popover-body {
+    padding: 0.5rem 0.75rem;
+    color: #212529;
+    width: 200px;
+}
+
+
+/*
+   Authors : pvgroups
+  Website : https://pvgroups.com/
+  App Name : Ellvin Fresh
+  Created : 1-jan-2021
+  This App Template Source code is licensed as per the
+  terms found in the Website https://pvgroups.com/license
+  Copyright and Good Faith Purchasers © 2020-present pvgroups.
+*/
+
+label {
+    display: block;
+}
+
+.modal-header {
+    display: none;
+}
+
+.btn-primary {
+    background-color: #DE4828!important;
+    color: #fff;
+    width: 100%;
+}
+
+.modal-body {
+    text-align: center;
+}
+
+.form_row {
+    margin-top: 130px;
+}
+
+.logo_banner {
+    background: #e23117;
+    padding: 15px;
+}
+
+.login_form {
+    margin-top: 45px;
+}
+
+.form_div {
+    padding: 25px;
+    // box-shadow: 0px 3px 6px rgba(0,0,0,0.4);
+    .head_title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+        margin-bottom: 15px;
+        width: 100%;
+        label {
+            font-weight: 500;
+            font-size: 26px;
+            text-transform: capitalize;
+            margin: 0;
+        }
+    }
+    input {
+        margin-bottom: 15px;
+    }
+    .forgot {
+        color: #DE4828;
+        font-weight: 400;
+        text-align: right;
+        cursor: pointer;
+    }
+    .btn {
+        background: #DE4828;
+        color: white;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .bottom_lbl {
+        text-align: center;
+        font-weight: 400;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    .bottom_lbl:hover {
+        color: #DE4828;
+    }
+}
+
+
+/*******************************
+* MODAL AS LEFT/RIGHT SIDEBAR
+* Add "left" or "right" in modal parent div, after class="modal".
+* Get free snippets on bootpen.com
+*******************************/
+
+.modal.left .modal-dialog,
+.modal.right .modal-dialog {
+    position: fixed;
+    margin: auto;
+    width: 320px;
+    height: 100%;
+    -webkit-transform: translate3d(0%, 0, 0);
+    -ms-transform: translate3d(0%, 0, 0);
+    -o-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+}
+
+.modal.left .modal-content,
+.modal.right .modal-content {
+    height: 100%;
+    // overflow-y: auto;
+}
+
+.modal.left .modal-body,
+.modal.right .modal-body {
+    padding: 15px 15px 80px;
+}
+
+
+/*Left*/
+
+.modal.left.fade .modal-dialog {
+    left: -320px;
+    -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+    -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+    -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+    transition: opacity 0.3s linear, left 0.3s ease-out;
+}
+
+.modal.left.fade.in .modal-dialog {
+    left: 0;
+}
+
+
+/*Right*/
+
+.modal.right.fade .modal-dialog {
+    right: -320px;
+    -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+    -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+    -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+    transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+
+.modal.right.fade.in .modal-dialog {
+    right: 0;
+}
+
+
+/* ----- MODAL STYLE ----- */
+
+.modal-content {
+    border-radius: 0;
+    border: none;
+}
+
+.modal-header {
+    border-bottom-color: #EEEEEE;
+    background-color: #FAFAFA;
+}
+
+
+/* ----- v CAN BE DELETED v ----- */
+
+body {
+    background-color: #78909C;
+}
+
+.demo {
+    padding-top: 60px;
+    padding-bottom: 110px;
+}
+
+.btn-demo {
+    margin: 15px;
+    padding: 10px 15px;
+    border-radius: 0;
+    font-size: 16px;
+    background-color: #FFFFFF;
+}
+
+.btn-demo:focus {
+    outline: 0;
+}
+
+.demo-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: #212121;
+    text-align: center;
+}
+
+.demo-footer>a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+}
